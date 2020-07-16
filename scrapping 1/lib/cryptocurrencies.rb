@@ -20,7 +20,8 @@ def c_prix
 return c_prix
 end
 
-c_nom.zip(c_prix).to_h
+my_hash = Hash.new
+c_nom.zip(c_prix) { |k,v|  my_hash[k] = v }
 
 #Ton array devra avoir le format suivant :
 #a = [
