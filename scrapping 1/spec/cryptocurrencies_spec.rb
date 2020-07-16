@@ -1,4 +1,7 @@
-require 'rspec'
+require 'rubygems'
+require 'nokogiri'
+require 'open-uri'
+
 require_relative '../lib/cryptocurrencies'
 
 describe "nom" do
