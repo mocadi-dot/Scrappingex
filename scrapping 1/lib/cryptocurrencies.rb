@@ -20,11 +20,7 @@ def c_prix
 return c_prix
 end
 
-#tentative de création du hash
-result = Hash.new
-result['ta_key'] = 'ta_value'
-
-
+c_nom.zip(c_prix).to_h
 
 #Ton array devra avoir le format suivant :
 #a = [
