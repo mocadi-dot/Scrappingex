@@ -2,18 +2,18 @@ require 'rubygems'
 require 'nokogiri'
 require 'open-uri'
 
+page = Nokogiri::HTML(open("https://coinmarketcap.com/all/views/all/"))
 
 def c_nom
   c_nom=[]
-  page = nokogiri::HTML(open("https://coinmarketcap.com/all/views/all/")) #P4.Ouvrir l'URL souhaitée sous Nokogiri ... page = Nokogiri::HTML(open("ton_url_a_scrapper.com"))
-  page.xpath('//*[@class="cmc-table__column-name sc-1kxikfi-0 eTVhdN"]').each do |node|
+    page.xpath('//*[@class="cmc-table__column-name sc-1kxikfi-0 eTVhdN"]').each do |node|
     c_nom << node.text
   end
 return c_nom
 end
 
 def c_prix
-  prix=[]
+  c_prix=[]
   page.url.xpath('//[@class="cmc-tablecell cmc-tablecell--sortable cmc-tablecell--right cmc-tablecell--sort-by__price"]/[@class="cmc-link"]').each do |node|
   c_prix << node.text
   end
